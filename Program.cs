@@ -9,21 +9,39 @@ namespace Calculator
             Console.Clear();
 
             Soma();
+            Subtracao();
         }
 
         static void Soma()
         {
             Console.Write("Digite o primeiro valor: ");
-            float valor1 = float.Parse(Console.ReadLine());
+            float valor1 = float.Parse(Console.ReadLine()!);
             Console.WriteLine("");
 
             Console.Write("Digite o segundo valor: ");
-            float valor2 = float.Parse(Console.ReadLine());
+            float valor2 = float.Parse(Console.ReadLine()!);
             Console.WriteLine("");
 
             float resultado = valor1 + valor2;
 
-            Console.WriteLine($"O resultado da soma é: {resultado}"); 
-        } 
+            Console.WriteLine($"O resultado da soma é: {resultado}");
+            Console.ReadKey();
+        }
+
+        static void Subtracao()
+        {
+            Console.Write("Digite o primeiro valor: ");
+            float valor1 = float.Parse(Console.ReadLine()!);
+            Console.WriteLine("");
+
+            Console.Write("Digite o segundo valor: ");
+            float valor2 = float.Parse(Console.ReadLine()!);
+            Console.WriteLine("");
+
+            float resultado = valor1 - valor2;
+
+            Console.WriteLine($"O resultado da subtração é: {resultado}");
+            Console.ReadKey();
+        }
     }
 }
