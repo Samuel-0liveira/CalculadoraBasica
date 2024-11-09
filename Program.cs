@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 
 namespace Calculator 
 {
@@ -6,7 +7,7 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
-            Divisao();
+            Multiplicacao();
         }
 
         static void Soma()
@@ -60,6 +61,24 @@ namespace Calculator
             float resultado = valor1 / valor2;
 
             Console.WriteLine($"O resultado da divisão é: {resultado}");
+            Console.ReadKey();
+        }
+
+        static void Multiplicacao()
+        {
+            Console.Clear();
+
+            Console.Write("Digite o primeiro valor: ");
+            float valor1 = float.Parse(Console.ReadLine()!);
+            Console.WriteLine("");
+
+            Console.Write("Digite o segundo valor: ");
+            float valor2 = float.Parse(Console.ReadLine()!);
+            Console.WriteLine("");
+
+            float resultado = valor1 * valor2;
+
+            Console.WriteLine($"O resultado da multiplicação é: {resultado}");
             Console.ReadKey();
         }
     }
