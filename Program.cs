@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 
 namespace Calculator 
 {
@@ -70,6 +71,16 @@ namespace Calculator
 
             Console.Write("Por favor, selecione uma das opções: ");
             short escolha = short.Parse(Console.ReadLine()!);
+
+            switch(escolha)
+            {
+                case 6:
+                    Media();
+                    break;
+                default:
+                    Menu();
+                    break;
+            }
         }
 
         static void Soma()
@@ -144,6 +155,32 @@ namespace Calculator
             float resultado = valor1 / valor2;
 
             Console.WriteLine($"O resultado da divisão é: {resultado}");
+            Console.ReadKey();
+            Menu();
+        }
+
+        static void Media()
+        {
+            Console.Clear();
+
+            Console.Write("Digite quantos valores serão informados: ");
+            int quantidade = int.Parse(Console.ReadLine()!);
+            Console.WriteLine("");
+
+            float resultado = 0;
+
+            for (int i = 0; i < quantidade; i++)
+            {
+                Console.Write($"Digite o {i + 1}° valor: ");
+                float valor = float.Parse(Console.ReadLine()!);
+
+                resultado += valor;
+            }
+
+            float media = resultado / quantidade;
+
+            Console.WriteLine("");
+            Console.WriteLine($"A média dos valores digitados é de: {media}");
             Console.ReadKey();
             Menu();
         }
