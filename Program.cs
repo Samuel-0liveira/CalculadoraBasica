@@ -21,6 +21,7 @@ namespace Calculator
             Console.WriteLine("2 - Subtração");
             Console.WriteLine("3 - Multiplicação");
             Console.WriteLine("4 - Divisão");
+            Console.WriteLine("5 - Próximo menu");
             Console.WriteLine("0 - Sair");
             Console.WriteLine("--------------------------------");
             Console.WriteLine("");
@@ -42,6 +43,9 @@ namespace Calculator
                 case 4:
                     Divisao();
                     break;
+                case 5:
+                    Menu2();
+                    break;
                 case 0:
                     System.Environment.Exit(0);
                     break;
@@ -49,6 +53,23 @@ namespace Calculator
                     Menu();
                     break;                
             }
+        }
+
+        static void Menu2() 
+        {
+            Console.Clear();
+
+            Console.WriteLine("Qual operação deseja realizar?");
+            Console.WriteLine("--------------------------------");
+            Console.WriteLine("6 - Média");
+            Console.WriteLine("7 - Porcentagem");
+            Console.WriteLine("8 - Raiz Quadrada");
+            Console.WriteLine("0 - Voltar");
+            Console.WriteLine("--------------------------------");
+            Console.WriteLine("");
+
+            Console.Write("Por favor, selecione uma das opções: ");
+            short escolha = short.Parse(Console.ReadLine()!);
         }
 
         static void Soma()
