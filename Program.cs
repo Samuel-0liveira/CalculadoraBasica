@@ -77,8 +77,14 @@ namespace Calculator
                 case 6:
                     Media();
                     break;
-                default:
+                case 7:
+                    Porcentagem();
+                    break;
+                case 0:
                     Menu();
+                    break;
+                default:
+                    Menu2();
                     break;
             }
         }
@@ -181,6 +187,25 @@ namespace Calculator
 
             Console.WriteLine("");
             Console.WriteLine($"A média dos valores digitados é de: {media}");
+            Console.ReadKey();
+            Menu();
+        }
+
+        static void Porcentagem()
+        {
+            Console.Clear();
+
+            Console.Write("Porcentagem a ser descoberta: ");
+            int porcentagem = int.Parse(Console.ReadLine()!);
+            Console.WriteLine("");
+
+            Console.Write("Valor qual deve ser descoberta a porcentagem: ");
+            float valor = float.Parse(Console.ReadLine()!);
+            Console.WriteLine("");
+
+            float resultado = porcentagem * valor / 100;
+
+            Console.WriteLine($"{porcentagem}% de {valor} é igual a: {resultado}");
             Console.ReadKey();
             Menu();
         }
