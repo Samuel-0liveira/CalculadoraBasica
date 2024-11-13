@@ -80,6 +80,9 @@ namespace Calculator
                 case 7:
                     Porcentagem();
                     break;
+                case 8:
+                    Raiz();
+                    break;
                 case 0:
                     Menu();
                     break;
@@ -206,6 +209,21 @@ namespace Calculator
             float resultado = porcentagem * valor / 100;
 
             Console.WriteLine($"{porcentagem}% de {valor} é igual a: {resultado}");
+            Console.ReadKey();
+            Menu();
+        }
+
+        static void Raiz()
+        {
+            Console.Clear();
+
+            Console.Write("A raiz quadrada será calculada do número: ");
+            int valor = int.Parse(Console.ReadLine()!);
+            Console.WriteLine("");
+
+            double raiz = Math.Sqrt(valor);
+
+            Console.WriteLine($"A raiz quadrada de {valor} é: {raiz}");
             Console.ReadKey();
             Menu();
         }
